@@ -7,9 +7,9 @@ public class PeopleServices {
     ApiServices apiServices = new ApiServices();
 
 
-    public PeopleResponseDTO getPeopleFromDTO(){
+    public PeopleResponseDTO getPeopleFromDTO(int movieID){
 
-        String uri = "";
+        String uri = "https://api.themoviedb.org/3/genre/movie/list?&language=en-US";
         return apiServices.fetchData(token, uri, PeopleResponseDTO.class);
     }
 }

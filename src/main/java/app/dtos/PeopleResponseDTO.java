@@ -1,7 +1,10 @@
 package app.dtos;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class PeopleResponseDTO {
     private int page;
     private List<PeopleDTO> results;
