@@ -5,13 +5,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieDTO {
 
@@ -26,6 +26,6 @@ public class MovieDTO {
     @JsonSetter("vote_average")
     private double voteRating;
     @JsonSetter("genre_ids")
-    private List<Integer> genre;
+    private Set<Integer> genre;
 
 }
