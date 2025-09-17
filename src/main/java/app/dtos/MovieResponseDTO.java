@@ -12,5 +12,6 @@ public class MovieResponseDTO {
     private List<MovieDTO> results;
     private int total_pages;
     private int total_results;
+    //private MovieDTO movieDTO;
 
 }

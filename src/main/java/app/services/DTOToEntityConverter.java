@@ -5,7 +5,7 @@ import app.dtos.MovieDTO;
 import app.dtos.PeopleDTO;
 
 public class DTOToEntityConverter {
-
+/*
     public Movie movieDTOToEntity(MovieDTO movieDTO){
         Movie movie = Movie.builder()
                 .title(movieDTO.getTitle())
@@ -34,4 +34,6 @@ public class DTOToEntityConverter {
                 .build();
         return people;
     }
+
+ */
 }
