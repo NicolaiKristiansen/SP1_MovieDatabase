@@ -25,7 +25,7 @@ public class MovieDTO {
     private String releaseDate;
     @JsonSetter("vote_average")
     private double voteRating;
-    @JsonSetter()
+    @JsonSetter("genre_ids")
     private List<GenreDTO> genre;
 
 }
