@@ -7,7 +7,7 @@ public class MovieServices {
     String token = System.getenv("token");
 
     public MovieResponseDTO getMoviesFromAPI(){
-        String uri = "https://api.themoviedb.org/3/discover/movie?language=da&page=1&region=DK&sort_by=popularity.desc&with_original_language=da&primary_release_date.lte=2020-09-15";
+        String uri = "https://api.themoviedb.org/3/discover/movie?language=da&page=1&region=DK&sort_by=popularity.desc&with_original_language=da&primary_release_date.gte=2020-09-15";
        return apiServices.fetchData(token, uri, MovieResponseDTO.class);
     }
 
