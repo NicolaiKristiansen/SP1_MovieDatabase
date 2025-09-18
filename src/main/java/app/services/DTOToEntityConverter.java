@@ -1,11 +1,23 @@
 package app.services;
 
+
 import app.dtos.*;
 import app.entities.Movie;
 import app.entities.People;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import app.dtos.GenreDTO;
+import app.dtos.MovieDTO;
+import app.dtos.PeopleDTO;
+import app.entities.Genre;
+import app.entities.Movie;
+import app.entities.People;
+
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class DTOToEntityConverter {
 
@@ -36,7 +48,7 @@ public class DTOToEntityConverter {
 /*
     public Genre genreDTOToEntity(GenreDTO genreDTO){
         Genre genre = Genre.builder()
-                .id(genreDTO.getID())
+                .id(genreDTO.getId())
                 .name(genreDTO.getName())
                 .build();
         return genre;
