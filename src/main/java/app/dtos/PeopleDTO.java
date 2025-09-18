@@ -22,6 +22,4 @@ public class PeopleDTO {
     @JsonSetter("known_for_department")
     private String knowForDepartment;
 
-    @JsonSetter("known_for")
-    List<MovieDTO> knownFor;
 }
