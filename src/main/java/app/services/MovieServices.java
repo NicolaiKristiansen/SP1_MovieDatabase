@@ -24,10 +24,8 @@ public class MovieServices {
     public void getAllMoviesWithPeople(EntityManagerFactory emf) {
         PeopleServices ps = new PeopleServices();
         MovieDAO mDAO = new MovieDAO(emf);
-        MovieServices ms = new MovieServices();
 
-
-        MovieResponseDTO movieResponseDTO = ms.getMoviesFromAPI();
+        MovieResponseDTO movieResponseDTO = getMoviesFromAPI();
 
         DTOToEntityConverter dtoToEntityConverter = new DTOToEntityConverter();
         List<Movie> m = dtoToEntityConverter.convertMovieResponseToEntities(movieResponseDTO);
