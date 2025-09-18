@@ -1,6 +1,6 @@
 package app.services;
 
-import app.daos.MovieDAO;
+import app.dao.MovieDAO;
 import app.dtos.MovieResponseDTO;
 import app.dtos.PeopleResponseDTO;
 import app.entities.Movie;
@@ -40,7 +40,7 @@ public class MovieServices {
 
         }
         for (Movie m2 : m) {
-            mDAO.createMovie(m2);
+            mDAO.create(m2);
         }
     }
 }
