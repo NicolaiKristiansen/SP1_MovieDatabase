@@ -3,7 +3,7 @@ package app.dao;
 import app.entities.Movie;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-
+//Merge comment
 public class MovieDAO implements IDAO<Movie, Integer>{
     private EntityManagerFactory emf;
 
