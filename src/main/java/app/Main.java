@@ -1,10 +1,12 @@
 package app;
 
 import app.config.HibernateConfig;
-import app.daos.MovieDAO;
+import app.dao.MovieDAO;
 import app.dtos.*;
+import app.entities.Genre;
 import app.entities.Movie;
 import app.entities.People;
+import app.query.Query;
 import app.services.DTOToEntityConverter;
 import app.services.GenreService;
 import app.services.MovieServices;
@@ -24,6 +26,17 @@ public class Main {
         MovieServices movieServices = new MovieServices();
 
         movieServices.getAllMoviesWithPeople(emf);
+
+        Query query = new Query(emf);
+        System.out.println("--- Top 10 ---");
+        query.getTop10Movies().forEach(System.out::println);
+        System.out.println("--- Bottom 10 ---");
+        query.getBottom10Movies().forEach(System.out::println);
+        System.out.println("--- Movies with searchword in title ---");
+        query.searchByKeyWord("De").forEach(System.out::println);
+        System.out.println("--- Get all movies sharing a genre ---");
+        //TODO: We need  a genre object, best to get it from the database
+       // query.getAllMoviesSharingAGenre();
        /*
         GenreService gs = new GenreService();
         GenreResponeDTO genreResponseDTO = gs.getGenreFromAPI();

@@ -27,9 +27,11 @@ public class Movie {
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @Builder.Default
+    @ToString.Exclude
     private Set<Genre> genres = new HashSet<>();
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @Builder.Default
+    @ToString.Exclude
     private Set<People> people = new HashSet<>();
 
 
