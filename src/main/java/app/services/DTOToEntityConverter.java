@@ -41,6 +41,34 @@ public class DTOToEntityConverter {
                 .collect(Collectors.toList());
     }
 
+    public Movie convertMovieResponseToEntity(MovieDTO movieDTO) {
+
+        return Movie.builder()
+                .movieId(movieDTO.getId())
+                .title(movieDTO.getTitle())
+                .language(movieDTO.getLanguage())
+                .releaseDate(movieDTO.getReleaseDate())
+                .voteRating(movieDTO.getVoteRating())
+                .build();
+    }
+
+    //Adding method to convert genreDTO to entity
+
+    public Genre genreDTOToEntity(GenreDTO genreDTO){
+        return Genre.builder()
+                .genreId(genreDTO.getId())
+                .name(genreDTO.getName())
+                .build();
+    }
+    public List<Genre> convertGenreToEntities(GenreResponeDTO genreResponeDTO) {
+        List<GenreDTO> genreListDTO = genreResponeDTO.getGenres();
+
+        return genreListDTO.stream()
+                .map(this::genreDTOToEntity)
+                .collect(Collectors.toList());
+
+    }
+
 
 
 
@@ -65,13 +93,13 @@ public class DTOToEntityConverter {
         return people;
     }
 
-    public List<People> convertPeopleResponseToEntities(PeopleResponseDTO peopleResponseDTO) {
+    public Set<People> convertPeopleResponseToEntities(PeopleResponseDTO peopleResponseDTO) {
 
-        List<PeopleDTO> peopleListDTO = peopleResponseDTO.getCast();
+        Set<PeopleDTO> peopleListDTO = peopleResponseDTO.getCast();
 
         return peopleListDTO.stream()
                 .map(this::peopleDTOToEntity)
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 
 
