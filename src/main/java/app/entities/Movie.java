@@ -25,11 +25,11 @@ public class Movie {
     private String releaseDate;
     private Double voteRating;
 
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE,  CascadeType.REFRESH})
     @Builder.Default
     @ToString.Exclude
     private Set<Genre> genres = new HashSet<>();
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @Builder.Default
     @ToString.Exclude
     private Set<People> people = new HashSet<>();
