@@ -1,6 +1,7 @@
 package app;
 
 import app.config.HibernateConfig;
+import app.query.Query;
 import app.services.MovieServices;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -14,6 +15,9 @@ public class Main {
 
         movieServices.getMoviesWithPeoplesAndGenres(emf);
 
+        Query query = new Query(emf);
+
+        query.getTop10Movies().forEach(System.out::println);
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.println("Task runtime: " + duration + " milliseconds");

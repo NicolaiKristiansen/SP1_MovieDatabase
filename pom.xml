@@ -16,6 +16,10 @@
         <hibernate-version>7.1.0.Final</hibernate-version>
         <junit.version>5.13.4</junit.version>
         <postgres.version>42.7.7</postgres.version>
+        <testcontainers.version>1.20.4</testcontainers.version>
+        <logback-classic>1.5.16</logback-classic>
+        <org.slf4j>2.0.16</org.slf4j>
+        <hamcrest>3.0</hamcrest>
     </properties>
 
     <dependencies>
